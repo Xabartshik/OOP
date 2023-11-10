@@ -1,6 +1,23 @@
 // Сеттер для типа крепления бомб
 #include <string>
 #include "WarPlanesDescription.h"
+///Ошлаков Данил, ИВТ-22
+//Крутой конструктор с параметрами
+WarPlanesDescription::WarPlanesDescription(const string& newID, const string& newPlaneType, double newMaxSpeed, double newMaxHeight,
+    double newMaxDistance, double newTakeoffWeight, double newMaxWeight, unsigned short newCrew, unsigned short newEngineNumber,
+    const string& newEngineType, double newEnginePower, const string& newBombAttachmentType,
+    unsigned int newMaxBombLoad, const string& newBombTypes, unsigned int newMaxBombCount) :
+    PlanesDescription(newID, newPlaneType, newMaxSpeed, newMaxHeight, newMaxDistance, newTakeoffWeight, newMaxWeight, newCrew,
+        newEngineNumber, newEngineType, newEnginePower)
+{
+    setBombAttachmentType(newBombAttachmentType);
+    setMaxBombLoad(newMaxBombLoad);
+    setBombTypes(newBombTypes);
+    setMaxBombCount(newMaxBombCount);
+}
+
+
+
 //Конструктор пустой
 WarPlanesDescription::WarPlanesDescription() {
     setBombAttachmentType("");
@@ -54,10 +71,10 @@ return *this;
 
 //Конструктор с параметрами
 WarPlanesDescription::WarPlanesDescription(string attachmentType, unsigned int maxLoad, string types, unsigned int maxCount) {
-    bombAttachmentType = attachmentType;
-    maxBombLoad = maxLoad;
-    bombTypes = types;
-    maxBombCount = maxCount;
+    setBombAttachmentType(attachmentType);
+    setMaxBombLoad(maxLoad);
+    setBombTypes(types);
+    setMaxBombCount(maxCount);
 }
 //Очищает значения полей
 void WarPlanesDescription::clear()

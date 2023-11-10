@@ -1,7 +1,9 @@
 #pragma once
 #include "ClassAdd.h"
 #include <string>
+///Ошлаков Данил, ИВТ-22
 using namespace std;
+//Самолет, Тип крепления, Нагрузка бомб, Типы бомб, Кол-во бомб
 class WarPlanesDescription : public PlanesDescription
 {
 private:
@@ -16,6 +18,14 @@ private:
 
 
 public:
+    //Конструктор с параметрами (полный)
+    WarPlanesDescription(const string& newID, const string& newPlaneType, double newMaxSpeed, double newMaxHeight,
+        double newMaxDistance, double newTakeoffWeight, double newMaxWeight, unsigned short newCrew, unsigned short newEngineNumber,
+        const string& newEngineType, double newEnginePower, const string& newBombAttachmentType,
+        unsigned int newMaxBombLoad, const string& newBombTypes, unsigned int newMaxBombCount);
+
+
+
 
     //Конструктор пустой
     WarPlanesDescription();
