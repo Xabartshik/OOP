@@ -30,6 +30,29 @@ private:
 
 
 
+    ///Регистрационный номер самолета
+    string ID;
+    ///Название самолета(типа марки или бренда)
+    string planeType;
+    ///Максимальная скорость самолета (при стандартной загрузке)
+    double maxSpeed;
+    ///Максимальная высота полета самолета (при стандартной загрузке)
+    unsigned maxHeight;
+    ///Максимальная дальность полета самолета (при стандартной загрузке)
+    unsigned maxDistance;
+    ///Взлетная масса самолета
+    unsigned takeoffWeight;
+    //Экипаж самолета
+    unsigned short crew;
+    ///Максимальная загрузка самолета 
+    unsigned maxWeight;
+    ///Мощность мотора
+    double enginePower;
+    ///Тип мотора
+    string engineType;
+    ///Число двигателей
+    unsigned short engineNumber;
+
 public:
 
     /// Пустой конструктор
