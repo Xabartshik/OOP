@@ -9,19 +9,19 @@ private:
 	BusinessPlanesDescription(const string& newID, const string& newPlaneType, double newMaxSpeed, double newMaxHeight,
 		double newMaxDistance, double newTakeoffWeight, double newMaxWeight, unsigned short newCrew, unsigned short newEngineNumber,
 		const string& newEngineType, double newEnginePower, unsigned short newCapacity);
-	//Конструктор с параметрами
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 	BusinessPlanesDescription(unsigned short newCapacity);
 
 
 
 
 public:
-	//Сеттер для человековместимости
+	//РЎРµС‚С‚РµСЂ РґР»СЏ С‡РµР»РѕРІРµРєРѕРІРјРµСЃС‚РёРјРѕСЃС‚Рё
 	void setHumanCapacity(unsigned short newCapacity);
 
 
 
-	//Геттер для человековместимости
+	//Р“РµС‚С‚РµСЂ РґР»СЏ С‡РµР»РѕРІРµРєРѕРІРјРµСЃС‚РёРјРѕСЃС‚Рё
 	unsigned short getHumanCapacity() const;
 
 

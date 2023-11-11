@@ -1,24 +1,24 @@
 #pragma once
 #include "ClassAdd.h"
 #include <string>
-///Ошлаков Данил, ИВТ-22
+///РћС€Р»Р°РєРѕРІ Р”Р°РЅРёР», РР’Рў-22
 using namespace std;
-//Самолет, Тип крепления, Нагрузка бомб, Типы бомб, Кол-во бомб
+//РЎР°РјРѕР»РµС‚, РўРёРї РєСЂРµРїР»РµРЅРёСЏ, РќР°РіСЂСѓР·РєР° Р±РѕРјР±, РўРёРїС‹ Р±РѕРјР±, РљРѕР»-РІРѕ Р±РѕРјР±
 class WarPlanesDescription : public PlanesDescription
 {
 private:
-    // Тип крепления бомб
+    // РўРёРї РєСЂРµРїР»РµРЅРёСЏ Р±РѕРјР±
     string bombAttachmentType;
-    // Максимальная бомбовая нагрузка
+    // РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ Р±РѕРјР±РѕРІР°СЏ РЅР°РіСЂСѓР·РєР°
     unsigned int maxBombLoad; 
-    // Типы бомб
+    // РўРёРїС‹ Р±РѕРјР±
     string bombTypes; 
-    // Максимальное количество бомб
+    // РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ Р±РѕРјР±
     unsigned int maxBombCount; 
 
 
 public:
-    //Конструктор с параметрами (полный)
+    //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё (РїРѕР»РЅС‹Р№)
     WarPlanesDescription(const string& newID, const string& newPlaneType, double newMaxSpeed, double newMaxHeight,
         double newMaxDistance, double newTakeoffWeight, double newMaxWeight, unsigned short newCrew, unsigned short newEngineNumber,
         const string& newEngineType, double newEnginePower, const string& newBombAttachmentType,
@@ -27,48 +27,48 @@ public:
 
 
 
-    //Конструктор пустой
+    //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїСѓСЃС‚РѕР№
     WarPlanesDescription();
 
-    //Конструктор с параметрами
+    //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
     WarPlanesDescription(string attachmentType, unsigned int maxLoad, string types, unsigned int maxCount);
 
 
 
-    //Конструктор копирования :
+    //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ :
     WarPlanesDescription(const WarPlanesDescription& other);
-    // Оператор присваивания копированием
+    // РћРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ РєРѕРїРёСЂРѕРІР°РЅРёРµРј
     WarPlanesDescription& operator=(const WarPlanesDescription& other);
-    // Конструктор перемещения
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
     WarPlanesDescription(WarPlanesDescription&& other);
-    // Оператор присваивания перемещением
+    // РћРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ РїРµСЂРµРјРµС‰РµРЅРёРµРј
     WarPlanesDescription& operator=(WarPlanesDescription&& other);
-    //Очищение полей
+    //РћС‡РёС‰РµРЅРёРµ РїРѕР»РµР№
     void clear();
-    // Сеттер для типа крепления бомб
+    // РЎРµС‚С‚РµСЂ РґР»СЏ С‚РёРїР° РєСЂРµРїР»РµРЅРёСЏ Р±РѕРјР±
     void setBombAttachmentType(const string& attachmentType);
 
-    // Геттер для типа крепления бомб
+    // Р“РµС‚С‚РµСЂ РґР»СЏ С‚РёРїР° РєСЂРµРїР»РµРЅРёСЏ Р±РѕРјР±
     const string& getBombAttachmentType() const;
 
-    // Сеттер для максимальной бомбовой нагрузки
+    // РЎРµС‚С‚РµСЂ РґР»СЏ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ Р±РѕРјР±РѕРІРѕР№ РЅР°РіСЂСѓР·РєРё
     void setMaxBombLoad(unsigned int maxBombLoad);
 
-    // Геттер для максимальной бомбовой нагрузки
+    // Р“РµС‚С‚РµСЂ РґР»СЏ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ Р±РѕРјР±РѕРІРѕР№ РЅР°РіСЂСѓР·РєРё
     unsigned int getMaxBombLoad() const;
 
-    // Сеттер для типов бомб
+    // РЎРµС‚С‚РµСЂ РґР»СЏ С‚РёРїРѕРІ Р±РѕРјР±
     void setBombTypes(const string& bombTypes);
 
-    // Геттер для типов бомб
+    // Р“РµС‚С‚РµСЂ РґР»СЏ С‚РёРїРѕРІ Р±РѕРјР±
     const string& getBombTypes() const;
 
-    // Сеттер для максимального количества бомб
+    // РЎРµС‚С‚РµСЂ РґР»СЏ РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ РєРѕР»РёС‡РµСЃС‚РІР° Р±РѕРјР±
     void setMaxBombCount(unsigned int maxBombCount);
-    // Геттер для максимального количества бомб
+    // Р“РµС‚С‚РµСЂ РґР»СЏ РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ РєРѕР»РёС‡РµСЃС‚РІР° Р±РѕРјР±
     unsigned int getMaxBombCount() const;
 
-    // Метод для получения всех полей класса в виде строки
+    // РњРµС‚РѕРґ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ РІСЃРµС… РїРѕР»РµР№ РєР»Р°СЃСЃР° РІ РІРёРґРµ СЃС‚СЂРѕРєРё
     string toStringBomber() const;
 };
 

@@ -1,8 +1,8 @@
-// Сеттер для типа крепления бомб
+// РЎРµС‚С‚РµСЂ РґР»СЏ С‚РёРїР° РєСЂРµРїР»РµРЅРёСЏ Р±РѕРјР±
 #include <string>
 #include "WarPlanesDescription.h"
-///Ошлаков Данил, ИВТ-22
-//Крутой конструктор с параметрами
+///РћС€Р»Р°РєРѕРІ Р”Р°РЅРёР», РР’Рў-22
+//РљСЂСѓС‚РѕР№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 WarPlanesDescription::WarPlanesDescription(const string& newID, const string& newPlaneType, double newMaxSpeed, double newMaxHeight,
     double newMaxDistance, double newTakeoffWeight, double newMaxWeight, unsigned short newCrew, unsigned short newEngineNumber,
     const string& newEngineType, double newEnginePower, const string& newBombAttachmentType,
@@ -18,7 +18,7 @@ WarPlanesDescription::WarPlanesDescription(const string& newID, const string& ne
 
 
 
-//Конструктор пустой
+//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїСѓСЃС‚РѕР№
 WarPlanesDescription::WarPlanesDescription() {
     setBombAttachmentType("");
     setMaxBombLoad(0);
@@ -26,14 +26,14 @@ WarPlanesDescription::WarPlanesDescription() {
     setMaxBombCount(0);
 };
 
-//Конструктор копирования :
+//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ :
 WarPlanesDescription::WarPlanesDescription(const WarPlanesDescription& other) {
     bombAttachmentType = other.bombAttachmentType;
     maxBombLoad = other.maxBombLoad;
     bombTypes = other.bombTypes;
     maxBombCount = other.maxBombCount;
 }
-// Оператор присваивания копированием
+// РћРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ РєРѕРїРёСЂРѕРІР°РЅРёРµРј
 WarPlanesDescription& WarPlanesDescription::operator=(const WarPlanesDescription& other) {
     if (this != &other) {
         bombAttachmentType = other.bombAttachmentType;
@@ -43,7 +43,7 @@ WarPlanesDescription& WarPlanesDescription::operator=(const WarPlanesDescription
     }
     return *this;
 }
-// Конструктор перемещения
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
 WarPlanesDescription::WarPlanesDescription(WarPlanesDescription&& other)
 {
     bombAttachmentType = move(other.bombAttachmentType);
@@ -54,7 +54,7 @@ WarPlanesDescription::WarPlanesDescription(WarPlanesDescription&& other)
     other.clear();
 
 }
-// Оператор присваивания перемещением
+// РћРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ РїРµСЂРµРјРµС‰РµРЅРёРµРј
 
 WarPlanesDescription& WarPlanesDescription::operator=(WarPlanesDescription&& other) {
 if (this != &other) {
@@ -69,14 +69,14 @@ return *this;
 }
 
 
-//Конструктор с параметрами
+//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 WarPlanesDescription::WarPlanesDescription(string attachmentType, unsigned int maxLoad, string types, unsigned int maxCount) {
     setBombAttachmentType(attachmentType);
     setMaxBombLoad(maxLoad);
     setBombTypes(types);
     setMaxBombCount(maxCount);
 }
-//Очищает значения полей
+//РћС‡РёС‰Р°РµС‚ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»РµР№
 void WarPlanesDescription::clear()
 {
     setBombAttachmentType("");
@@ -88,48 +88,48 @@ void WarPlanesDescription::setBombAttachmentType(const string& attachmentType) {
     bombAttachmentType = attachmentType;
 }
 
-// Геттер для типа крепления бомб
+// Р“РµС‚С‚РµСЂ РґР»СЏ С‚РёРїР° РєСЂРµРїР»РµРЅРёСЏ Р±РѕРјР±
 const string& WarPlanesDescription::getBombAttachmentType() const {
     return bombAttachmentType;
 }
 
-// Сеттер для максимальной бомбовой нагрузки
+// РЎРµС‚С‚РµСЂ РґР»СЏ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ Р±РѕРјР±РѕРІРѕР№ РЅР°РіСЂСѓР·РєРё
 void WarPlanesDescription::setMaxBombLoad(unsigned int newMaxBombLoad) {
     maxBombLoad = newMaxBombLoad;
 }
 
-// Геттер для максимальной бомбовой нагрузки
+// Р“РµС‚С‚РµСЂ РґР»СЏ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ Р±РѕРјР±РѕРІРѕР№ РЅР°РіСЂСѓР·РєРё
 unsigned int WarPlanesDescription::getMaxBombLoad() const {
     return maxBombLoad;
 }
 
-// Сеттер для типов бомб
+// РЎРµС‚С‚РµСЂ РґР»СЏ С‚РёРїРѕРІ Р±РѕРјР±
 void WarPlanesDescription::setBombTypes(const string& newBombTypes) {
     bombTypes = newBombTypes;
 }
 
-// Геттер для типов бомб
+// Р“РµС‚С‚РµСЂ РґР»СЏ С‚РёРїРѕРІ Р±РѕРјР±
 const string& WarPlanesDescription::getBombTypes() const {
     return bombTypes;
 }
 
-// Сеттер для максимального количества бомб
+// РЎРµС‚С‚РµСЂ РґР»СЏ РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ РєРѕР»РёС‡РµСЃС‚РІР° Р±РѕРјР±
 void WarPlanesDescription::setMaxBombCount(unsigned int newMaxBombCount) {
     maxBombCount = newMaxBombCount;
 }
 
-// Геттер для максимального количества бомб
+// Р“РµС‚С‚РµСЂ РґР»СЏ РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ РєРѕР»РёС‡РµСЃС‚РІР° Р±РѕРјР±
 unsigned int WarPlanesDescription::getMaxBombCount() const {
     return maxBombCount;
 }
-// Метод для получения всех полей класса в виде строки
+// РњРµС‚РѕРґ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ РІСЃРµС… РїРѕР»РµР№ РєР»Р°СЃСЃР° РІ РІРёРґРµ СЃС‚СЂРѕРєРё
 string WarPlanesDescription::toStringBomber() const {
     std::string result;
 
-    result += "Тип крепления бомб: " + bombAttachmentType + "; ";
-    result += "Максимальная бомбовая нагрузка: " + to_string(maxBombLoad) + "; ";
-    result += "Типы бомб: " + bombTypes + "; ";
-    result += "Максимальное количество бомб: " + to_string(maxBombCount) + "; ";
+    result += "РўРёРї РєСЂРµРїР»РµРЅРёСЏ Р±РѕРјР±: " + bombAttachmentType + "; ";
+    result += "РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ Р±РѕРјР±РѕРІР°СЏ РЅР°РіСЂСѓР·РєР°: " + to_string(maxBombLoad) + "; ";
+    result += "РўРёРїС‹ Р±РѕРјР±: " + bombTypes + "; ";
+    result += "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ Р±РѕРјР±: " + to_string(maxBombCount) + "; ";
 
     return result;
 }

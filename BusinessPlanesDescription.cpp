@@ -1,6 +1,6 @@
 #include "BusinessPlanesDescription.h"
 
-//Крутой конструктор с параметрами
+//РљСЂСѓС‚РѕР№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 BusinessPlanesDescription::BusinessPlanesDescription(const string& newID, const string& newPlaneType, double newMaxSpeed, double newMaxHeight,
 	double newMaxDistance, double newTakeoffWeight, double newMaxWeight, unsigned short newCrew, unsigned short newEngineNumber,
 	const string& newEngineType, double newEnginePower, unsigned short newCapacity) : PlanesDescription(newID, newPlaneType, newMaxSpeed, newMaxHeight, newMaxDistance, newTakeoffWeight, newMaxWeight, newCrew,
@@ -11,24 +11,24 @@ BusinessPlanesDescription::BusinessPlanesDescription(const string& newID, const 
 
 
 
-//Конструктор пустой
+//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїСѓСЃС‚РѕР№
 BusinessPlanesDescription::BusinessPlanesDescription() {
 	setHumanCapacity(0);
 };
-//Конструктор с параметрами
+//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 BusinessPlanesDescription::BusinessPlanesDescription(unsigned short newCapacity) {
 	setHumanCapacity(newCapacity);
 };
 
 
-//Сеттер для человековместимости
+//РЎРµС‚С‚РµСЂ РґР»СЏ С‡РµР»РѕРІРµРєРѕРІРјРµСЃС‚РёРјРѕСЃС‚Рё
 void BusinessPlanesDescription::setHumanCapacity(unsigned short newCapacity)
 {
 	humanCapacity = newCapacity;
 }
 
 
-//Геттер для человековместимости
+//Р“РµС‚С‚РµСЂ РґР»СЏ С‡РµР»РѕРІРµРєРѕРІРјРµСЃС‚РёРјРѕСЃС‚Рё
 unsigned short BusinessPlanesDescription::getHumanCapacity() const
 {
 	return humanCapacity;

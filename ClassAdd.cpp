@@ -2,10 +2,10 @@
 #include "ClassAdd.h"
 
 using namespace std;
-///Ошлаков Данил, ИВТ-22
+///РћС€Р»Р°РєРѕРІ Р”Р°РЅРёР», РР’Рў-22
 
 
-    /// Пустой конструктор
+    /// РџСѓСЃС‚РѕР№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 PlanesDescription::PlanesDescription()
 {
     setID("");
@@ -21,7 +21,7 @@ PlanesDescription::PlanesDescription()
     setEnginePower(0);
 
 }
-/// Конструктор с параметрами
+/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
     PlanesDescription::PlanesDescription(const string& newID, const string& newPlaneType, double newMaxSpeed, double newMaxHeight,
     double newMaxDistance, double newTakeoffWeight, double newMaxWeight, unsigned short newCrew, unsigned short newEngineNumber,
         const string& newEngineType, double newEnginePower)
@@ -39,7 +39,7 @@ PlanesDescription::PlanesDescription()
         setEnginePower(newEnginePower);
     }
 
-    //Конструктор копирования :
+    //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ :
     PlanesDescription::PlanesDescription(const PlanesDescription& other) {
         ID = other.ID;
         planeType = other.planeType;
@@ -56,7 +56,7 @@ PlanesDescription::PlanesDescription()
 
     }
 
-    // Оператор присваивания копированием
+    // РћРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ РєРѕРїРёСЂРѕРІР°РЅРёРµРј
     PlanesDescription& PlanesDescription::operator=(const PlanesDescription& other) {
         if (this != &other) {
             ID = other.ID;
@@ -74,7 +74,7 @@ PlanesDescription::PlanesDescription()
         return *this;
     }
 
-    // Конструктор перемещения
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
     PlanesDescription::PlanesDescription(PlanesDescription&& other)
     {
         ID = move(other.ID);
@@ -92,7 +92,7 @@ PlanesDescription::PlanesDescription()
         other.clear();
     }
 
-    // Оператор присваивания перемещением
+    // РћРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ РїРµСЂРµРјРµС‰РµРЅРёРµРј
     PlanesDescription& PlanesDescription::operator=(PlanesDescription&& other) {
         if (this != &other) {
             ID = move(other.ID);
@@ -111,7 +111,7 @@ PlanesDescription::PlanesDescription()
         }
         return *this;
     }
-    //Очищение полей
+    //РћС‡РёС‰РµРЅРёРµ РїРѕР»РµР№
 void PlanesDescription::clear()
 {
     setID("");
@@ -127,32 +127,32 @@ void PlanesDescription::clear()
     setEnginePower(0);
 }
 
-// Геттер для регистрационного номера самолета
+// Р“РµС‚С‚РµСЂ РґР»СЏ СЂРµРіРёСЃС‚СЂР°С†РёРѕРЅРЅРѕРіРѕ РЅРѕРјРµСЂР° СЃР°РјРѕР»РµС‚Р°
 string PlanesDescription::getID() const {
     return ID;
 }
 
-// Сеттер для регистрационного номера самолета
+// РЎРµС‚С‚РµСЂ РґР»СЏ СЂРµРіРёСЃС‚СЂР°С†РёРѕРЅРЅРѕРіРѕ РЅРѕРјРµСЂР° СЃР°РјРѕР»РµС‚Р°
 void PlanesDescription::setID(const string& newID) {
     ID = newID;
 }
 
-// Геттер для названия самолета
+// Р“РµС‚С‚РµСЂ РґР»СЏ РЅР°Р·РІР°РЅРёСЏ СЃР°РјРѕР»РµС‚Р°
 string PlanesDescription::getPlaneType() const {
     return planeType;
 }
 
-// Сеттер для названия самолета
+// РЎРµС‚С‚РµСЂ РґР»СЏ РЅР°Р·РІР°РЅРёСЏ СЃР°РјРѕР»РµС‚Р°
 void PlanesDescription::setPlaneType(const string& newPlaneType) {
     planeType = newPlaneType;
 }
 
-// Геттер для максимальной скорости самолета
+// Р“РµС‚С‚РµСЂ РґР»СЏ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ СЃРєРѕСЂРѕСЃС‚Рё СЃР°РјРѕР»РµС‚Р°
 double PlanesDescription::getMaxSpeed() const {
     return maxSpeed;
 }
 
-// Сеттер для максимальной скорости самолета
+// РЎРµС‚С‚РµСЂ РґР»СЏ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ СЃРєРѕСЂРѕСЃС‚Рё СЃР°РјРѕР»РµС‚Р°
 void PlanesDescription::setMaxSpeed(double newMaxSpeed) {
     if (newMaxSpeed < 0) {
         maxSpeed = 0;
@@ -162,56 +162,56 @@ void PlanesDescription::setMaxSpeed(double newMaxSpeed) {
     }
 }
 
-// Геттер для максимальной высоты полета самолета
+// Р“РµС‚С‚РµСЂ РґР»СЏ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ РІС‹СЃРѕС‚С‹ РїРѕР»РµС‚Р° СЃР°РјРѕР»РµС‚Р°
 unsigned PlanesDescription::getMaxHeight() const {
     return maxHeight;
 }
 
-// Сеттер для максимальной высоты полета самолета
+// РЎРµС‚С‚РµСЂ РґР»СЏ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ РІС‹СЃРѕС‚С‹ РїРѕР»РµС‚Р° СЃР°РјРѕР»РµС‚Р°
 void PlanesDescription::setMaxHeight(unsigned newMaxHeight) {
     maxHeight = newMaxHeight;
 }
 
-// Геттер для максимальной дальности полета самолета
+// Р“РµС‚С‚РµСЂ РґР»СЏ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ РґР°Р»СЊРЅРѕСЃС‚Рё РїРѕР»РµС‚Р° СЃР°РјРѕР»РµС‚Р°
 unsigned PlanesDescription::getMaxDistance() const {
     return maxDistance;
 }
 
-// Сеттер для максимальной дальности полета самолета
+// РЎРµС‚С‚РµСЂ РґР»СЏ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ РґР°Р»СЊРЅРѕСЃС‚Рё РїРѕР»РµС‚Р° СЃР°РјРѕР»РµС‚Р°
 void PlanesDescription::setMaxDistance(unsigned newMaxDistance) {
     maxDistance = newMaxDistance;
 }
 
-// Геттер для взлетной массы самолета
+// Р“РµС‚С‚РµСЂ РґР»СЏ РІР·Р»РµС‚РЅРѕР№ РјР°СЃСЃС‹ СЃР°РјРѕР»РµС‚Р°
 unsigned PlanesDescription::getTakeoffWeight() const {
     return takeoffWeight;
 }
 
-// Сеттер для взлетной массы самолета
+// РЎРµС‚С‚РµСЂ РґР»СЏ РІР·Р»РµС‚РЅРѕР№ РјР°СЃСЃС‹ СЃР°РјРѕР»РµС‚Р°
 void PlanesDescription::setTakeoffWeight(unsigned newTakeoffWeight) {
     takeoffWeight = newTakeoffWeight;
 }
 
-// Геттер для количества членов экипажа
+// Р“РµС‚С‚РµСЂ РґР»СЏ РєРѕР»РёС‡РµСЃС‚РІР° С‡Р»РµРЅРѕРІ СЌРєРёРїР°Р¶Р°
 unsigned short PlanesDescription::getCrew() const {
     return crew;
 }
 
-// Сеттер для количества членов экипажа
+// РЎРµС‚С‚РµСЂ РґР»СЏ РєРѕР»РёС‡РµСЃС‚РІР° С‡Р»РµРЅРѕРІ СЌРєРёРїР°Р¶Р°
 void PlanesDescription::setCrew(unsigned short newCrew) {
     crew = newCrew;
 }
 
-// Геттер для максимальной загрузки самолета
+// Р“РµС‚С‚РµСЂ РґР»СЏ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ Р·Р°РіСЂСѓР·РєРё СЃР°РјРѕР»РµС‚Р°
 unsigned PlanesDescription::getMaxWeight() const {
     return maxWeight;
 }
 
-// Сеттер для максимальной загрузки самолета
+// РЎРµС‚С‚РµСЂ РґР»СЏ РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ Р·Р°РіСЂСѓР·РєРё СЃР°РјРѕР»РµС‚Р°
 void PlanesDescription::setMaxWeight(unsigned newMaxWeight) {
     maxWeight = newMaxWeight;
 }
-// Сеттер для мощности мотора
+// РЎРµС‚С‚РµСЂ РґР»СЏ РјРѕС‰РЅРѕСЃС‚Рё РјРѕС‚РѕСЂР°
 void PlanesDescription::setEnginePower(double newEnginePower) {
 
     if (newEnginePower < 0) {
@@ -222,45 +222,45 @@ void PlanesDescription::setEnginePower(double newEnginePower) {
     }
 }
 
-// Геттер для мощности мотора
+// Р“РµС‚С‚РµСЂ РґР»СЏ РјРѕС‰РЅРѕСЃС‚Рё РјРѕС‚РѕСЂР°
 double PlanesDescription::getEnginePower() const {
     return enginePower;
 }
 
-// Сеттер для типа мотора
+// РЎРµС‚С‚РµСЂ РґР»СЏ С‚РёРїР° РјРѕС‚РѕСЂР°
 void PlanesDescription::setEngineType(const string& newEngineType) {
     engineType = newEngineType;
 }
 
-// Геттер для типа мотора
+// Р“РµС‚С‚РµСЂ РґР»СЏ С‚РёРїР° РјРѕС‚РѕСЂР°
 const string& PlanesDescription::getEngineType() const {
     return engineType;
 }
 
-// Сеттер для числа двигателей
+// РЎРµС‚С‚РµСЂ РґР»СЏ С‡РёСЃР»Р° РґРІРёРіР°С‚РµР»РµР№
 void PlanesDescription::setEngineNumber(unsigned short newEngineNumber) {
     engineNumber = newEngineNumber;
 }
 
-// Геттер для числа двигателей
+// Р“РµС‚С‚РµСЂ РґР»СЏ С‡РёСЃР»Р° РґРІРёРіР°С‚РµР»РµР№
 unsigned short PlanesDescription::getEngineNumber() const {
     return engineNumber;
 }
-// Метод для получения всех полей класса в виде строки
+// РњРµС‚РѕРґ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ РІСЃРµС… РїРѕР»РµР№ РєР»Р°СЃСЃР° РІ РІРёРґРµ СЃС‚СЂРѕРєРё
 string PlanesDescription::toStringPlane() {
     string info;
 
-    info += "Регистрационный номер самолета: " + ID + "; ";
-    info += "Название самолета: " + planeType + "; ";
-    info += "Максимальная скорость самолета: " + to_string(maxSpeed) + "; ";
-    info += "Максимальная высота полета самолета: " + to_string(maxHeight) + "; ";
-    info += "Максимальная дальность полета самолета: " + to_string(maxDistance) + "; ";
-    info += "Взлетная масса самолета: " + to_string(takeoffWeight) + "; ";
-    info += "Экипаж самолета: " + to_string(crew) + "; ";
-    info += "Максимальная загрузка самолета: " + to_string(maxWeight) + "; ";
-    info += "Мощность мотора: " + to_string(enginePower) + "; ";
-    info += "Тип мотора: " + engineType + "; ";
-    info += "Число двигателей: " + to_string(engineNumber) + "; ";
+    info += "Р РµРіРёСЃС‚СЂР°С†РёРѕРЅРЅС‹Р№ РЅРѕРјРµСЂ СЃР°РјРѕР»РµС‚Р°: " + ID + "; ";
+    info += "РќР°Р·РІР°РЅРёРµ СЃР°РјРѕР»РµС‚Р°: " + planeType + "; ";
+    info += "РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ СЃРєРѕСЂРѕСЃС‚СЊ СЃР°РјРѕР»РµС‚Р°: " + to_string(maxSpeed) + "; ";
+    info += "РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ РІС‹СЃРѕС‚Р° РїРѕР»РµС‚Р° СЃР°РјРѕР»РµС‚Р°: " + to_string(maxHeight) + "; ";
+    info += "РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ РґР°Р»СЊРЅРѕСЃС‚СЊ РїРѕР»РµС‚Р° СЃР°РјРѕР»РµС‚Р°: " + to_string(maxDistance) + "; ";
+    info += "Р’Р·Р»РµС‚РЅР°СЏ РјР°СЃСЃР° СЃР°РјРѕР»РµС‚Р°: " + to_string(takeoffWeight) + "; ";
+    info += "Р­РєРёРїР°Р¶ СЃР°РјРѕР»РµС‚Р°: " + to_string(crew) + "; ";
+    info += "РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ Р·Р°РіСЂСѓР·РєР° СЃР°РјРѕР»РµС‚Р°: " + to_string(maxWeight) + "; ";
+    info += "РњРѕС‰РЅРѕСЃС‚СЊ РјРѕС‚РѕСЂР°: " + to_string(enginePower) + "; ";
+    info += "РўРёРї РјРѕС‚РѕСЂР°: " + engineType + "; ";
+    info += "Р§РёСЃР»Рѕ РґРІРёРіР°С‚РµР»РµР№: " + to_string(engineNumber) + "; ";
 
     return info;
 }
